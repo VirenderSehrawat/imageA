@@ -28,6 +28,7 @@
     "core-js": "^2.4.1",
     "express": "^4.15.3",
     "ng2-bootstrap": "^1.6.3",
+    "ngx-bootstrap": "^2.0.4",
     "rxjs": "^5.1.0",
     "tslint": "~4.5.0",
     "typescript": "~2.2.0",

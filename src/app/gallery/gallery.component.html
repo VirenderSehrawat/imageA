@@ -1,6 +1,11 @@
 <div class="row">
     <h2>A Framework for Image Retrieval from cyberspace by Mapping Low Level Featurs with High Level Symentic</h2>
     <h3>{{ varTime | date:'dd-MMM-yyyy HH:mm'}}</h3>
+    <div class="btn-group">
+        <input type="search" id="imgSearch" class="form-control" [(ngModel)]="filterBy"/>        
+    </div>
+    
+    <!--
     <button class="btn btn-lg btn-info" [class.active]="filterBy==='all'" (click)="filterBy='all'">All</button>
     <button class="btn btn-lg btn-info" [class.active]="filterBy==='boats'" (click)="filterBy='boats'">Boats</button>
     <button class="btn btn-lg btn-info" [class.active]="filterBy==='camping'" (click)="filterBy='camping'">Camping</button>
@@ -11,6 +16,7 @@
     <button class="btn btn-lg btn-info" [class.active]="filterBy==='canal'" (click)="filterBy='canal'">Canal</button>
     <button class="btn btn-lg btn-info" [class.active]="filterBy==='flood'" (click)="filterBy='flood'">Flood</button>
     <button class="btn btn-lg btn-info" [class.active]="filterBy==='rain'" (click)="filterBy='rain'">Rain</button>
+    -->
     <ul id="thumbnailsList">
         <li *ngFor="let image of (visibleImages | imageFilter:filterBy)" >
             <a [routerLink] ="['/image', image.id]">
