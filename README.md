@@ -1,7 +1,6 @@
-# Gallery
+# Gallery by Virender Sehrawat
 
 A simplistic photo gallery app built using Angular 4.
-I created this application as a learning exercise and made a YouTube video showing how I built it. 
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
