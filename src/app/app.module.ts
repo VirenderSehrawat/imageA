@@ -11,24 +11,38 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { ImageComponent } from './image/image.component';
 import { ImageDetailComponent } from './image/image-detail.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { appRoutes } from '../routes'
+import { appRoutes } from '../routes';
+
+import { ImageListComponent } from './image-list/image-list.component';
+import { ImageServiceAPI } from './shared/image.service';
+
+import { MatCardModule, MatButtonModule, MatInputModule, MatProgressBarModule } from '@angular/material';
+import { MasonryModule } from 'angular2-masonry';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ImageListComponent,
     GalleryComponent,
     ImageComponent,
     NavbarComponent,
-      ImageDetailComponent,
-      ImageFilterPipe
+    ImageDetailComponent,
+    ImageFilterPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+    MatProgressBarModule,
+    MasonryModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ImageService, ImageFilterPipe],
+  providers: [ImageService, ImageFilterPipe, ImageServiceAPI],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

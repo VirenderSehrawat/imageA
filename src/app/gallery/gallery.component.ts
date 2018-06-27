@@ -12,6 +12,7 @@ export class GalleryComponent implements OnChanges {
   filterBy?: string = 'all'
   visibleImages:any[] = [];
   varTime: Date;
+  
 
   constructor(private imageService: ImageService) {
     console.log(this.filterBy)

@@ -1,4 +1,49 @@
+/*
 body{
   background: rgb(68,0,163);
-  background: linear-gradient(to bottom, rgba(68,0,163,1) 1%,rgba(27,35,63,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: linear-gradient(to bottom, rgba(68,0,163,1) 1%,rgba(27,35,63,1) 100%); 
+}
+*/
+.main-content{
+  padding-top: 50px;
+  background-color: transparent!important;
+}
+
+body{
+  background-color: transparent!important;
+}
+
+h1{
+  color: #333;
+  font-family: "Fredoka One", cursive;
+  text-align: center;
+  font-size: 4.2em;
+  padding-bottom: 0.5em;
+}
+
+.header{
+  padding-bottom: 3px;
+}
+
+#title{
+  display: inline-block;
+  font-size: 3.6em;
+  font-family: "Fredoka One", cursive;
+  text-align: center;
+  padding-bottom: 0.5em;
+}
+
+.pixabayLogo{
+  width: 200px;
+}
+
+.logo{
+  padding-bottom: 24px;
+  text-align: center;
+  float:right;
+}
+
+#attribution{
+  display: block;
+  padding-bottom: 8px;
 }
