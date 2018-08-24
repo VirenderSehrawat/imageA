@@ -7,7 +7,7 @@
     <mat-form-field>
         <input type="text" class="search" matInput [(ngModel)]="searchQuery" autofocus name="search" placeholder="Search for images" (keypress)="onKeypress($event)" >
         <button mat-button *ngIf="searchQuery" matSuffix mat-icon-button aria-label="Clear" (click)="searchImages(searchQuery)">
-            <mat-icon>search</mat-icon>
+            <mat-icon color="accent" >search</mat-icon>
           </button>
     </mat-form-field>
   </mat-card-content>

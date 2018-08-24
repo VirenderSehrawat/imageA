@@ -46,8 +46,16 @@ export class ImageListComponent implements OnInit {
   }
   onKeypress(event: any) {
     if (event.key === 'Enter') {
+      // if (this.searchQuery === ''){return;}
       console.log(event);
       console.log(this.searchQuery);
       this.searchImages(this.searchQuery);
-    }  }
+
+      /*
+      if (this.searchQuery.length > 3) {
+      this.searchImages(this.searchQuery);
+      }
+      */
+    }  
+  }
 }
