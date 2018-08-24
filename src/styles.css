@@ -1,7 +1,9 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 body{
   font-family: 'Lato', sans-serif;
   color: #ccc;
-  background-color: #efefef;
+  background-color: #d3d1d1;
 }
 
 .main-content{

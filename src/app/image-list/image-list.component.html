@@ -1,30 +1,44 @@
-<h2>A Framework for Image Retrieval from cyberspace by Mapping Low Level Featurs with High Level Symentic</h2>
-<h3>{{ varTime | date:'dd-MMM-yyyy HH:mm'}}</h3>
+<mat-card >
+  <div mat-card-header-text><h2>A Framework for Image Retrieval from cyberspace by Mapping Low Level Featurs with High Level Symentic</h2></div>
+  
+  <div mat-card-header-text ><h3>{{ varTime | async | date:'dd-MMM-yyyy HH:mm' }}</h3></div>
 
-<mat-card>
-  <mat-input-container>
-    <input class="search" matInput [(ngModel)]="searchQuery" autofocus name="search" placeholder="Search for images">
-  </mat-input-container>
-  <br>
-  <button (click)="searchImages(searchQuery)"
-    mat-raised-button class="searchButton" type="button">Find Images</button>
+  <mat-card-content>            
+    <mat-form-field>
+        <input type="text" class="search" matInput [(ngModel)]="searchQuery" autofocus name="search" placeholder="Search for images" (keypress)="onKeypress($event)" >
+        <button mat-button *ngIf="searchQuery" matSuffix mat-icon-button aria-label="Clear" (click)="searchImages(searchQuery)">
+            <mat-icon>search</mat-icon>
+          </button>
+    </mat-form-field>
+  </mat-card-content>
+
+  <mat-card-actions>
+      <button (click)="searchImages(searchQuery)" mat-raised-button class="searchButton" type="button">Find Images</button>
+  </mat-card-actions>
 </mat-card>
 
 <div *ngIf="searching">
   <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 </div>
 
-<mat-card>
-  <h4 *ngIf="imagesFound" mat-subeader>Results</h4>
+<mat-card style="min-height: 200px;" *ngIf="showResults">
+  <mat-card-content>
+      <h4 *ngIf="imagesFound" mat-subeader>Results</h4>
+      <div *ngFor="let image of images" class="image-container">
+            <img mat-card-image src="{{image.webformatURL}}"  class="imageFile">
+      </div>      
+  </mat-card-content>
+  
+  <!--
   <masonry [useImagesLoaded]="true">
-    <masonry-brick *ngFor="let image of images" class=image-container>
+    <masonry-brick *ngFor="let image of images" class="image-container">
       <mat-card>
         <a href="{{ image.pageURL }}" target="_bank">
           <mat-card-header>
             <div class="avatar" mat-card-avatar [ngStyle]="{'background-image':'url('+ image.userImageURL +')', 'background-size':'40px 40px'}"></div>
             <mat-card-title>User: {{ image.user }}</mat-card-title>
           </mat-card-header>
-          <img mat-card-image src="{{image.webformatURL}}">
+          <img mat-card-image src="{{image.webformatURL}}" class="imageFile" >
           <mat-card-content>
             <p>Tags: {{ image.tags }}</p>
             <p>Comments: {{ image.comments }}</p>
@@ -35,4 +49,6 @@
       <br><br>
     </masonry-brick>
   </masonry>
+-->
+
 </mat-card>

@@ -3,9 +3,7 @@
 }
 
 .search{
-  height: 70px;
-  max-height: 70px;
-  font-size: 3.5em;
+  font-size: 1.5em;
   color: #CA1740;
 }
 
@@ -20,16 +18,33 @@
 }
 
 .image-container{
-  width: 300px;
+  width: 100px;
   min-height: 100px;
-  max-width: 300px;
+  max-width: 100px;
   margin: 8px;
   border-radius: 2px;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
   overflow: hidden;
+  float: left;
+}
+.imageFile{
+  width: 100px;
+  height: 100px;
+  min-height: 100px;
+  max-width: 100px;
 }
 
 .results{
   padding: 8px;
   margin-bottom: 12px;
+}
+.mat-card{
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.mat-icon{
+  height:32px !important;
+  width:32px !important;
+  font-size:32px !important;
 }

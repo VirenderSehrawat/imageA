@@ -8,14 +8,13 @@ import { ImageService } from '../image/shared/image.service';
 })
 
 export class GalleryComponent implements OnChanges {
-  images:any[];
-  filterBy?: string = 'all'
-  visibleImages:any[] = [];
+  images: any[];
+  filterBy?: string = 'all';
+  visibleImages: any[] = [];
   varTime: Date;
-  
 
   constructor(private imageService: ImageService) {
-    console.log(this.filterBy)
+    console.log(this.filterBy);
     this.visibleImages = this.imageService.getImages();
     this.varTime = new Date();
   }

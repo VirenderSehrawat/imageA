@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageServiceAPI } from '../shared/image.service';
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'app-image-list',
@@ -10,32 +11,43 @@ export class ImageListComponent implements OnInit {
   images: any[];
   imagesFound: boolean = false;
   searching: boolean = false;
-  varTime: Date;
+  showResults: boolean = false;
+  searchQuery: string;
 
-  handleSuccess(data){
+  varTime = new Observable(observer => {
+    setInterval( () => {
+      observer.next(new Date().toString() );
+    } , 1000);
+  });
+
+  handleSuccess(data) {
     this.imagesFound = true;
     this.images = data.hits;
     console.log(data.hits);
   }
 
-  handleError(error){
+  handleError(error) {
     console.log(error);
   }
 
-  constructor(private _imageService : ImageServiceAPI) { }
+  constructor(private _imageService: ImageServiceAPI) { }
 
-  searchImages(query: string){
+  searchImages(query: string) {
     this.searching = true;
     return this._imageService.getImage(query).subscribe(
-      data => this.handleSuccess(data),
+      data => this.handleSuccess(data.json()),
       error => this.handleError(error),
-      () => this.searching = false
-    )
+      () => { this.searching = false;
+        this.showResults = true;
+      }
+    );
   }
-
   ngOnInit() {
-    this.varTime = new Date();
-
   }
-
+  onKeypress(event: any) {
+    if (event.key === 'Enter') {
+      console.log(event);
+      console.log(this.searchQuery);
+      this.searchImages(this.searchQuery);
+    }  }
 }

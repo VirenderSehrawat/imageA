@@ -16,8 +16,8 @@ import { appRoutes } from '../routes';
 import { ImageListComponent } from './image-list/image-list.component';
 import { ImageServiceAPI } from './shared/image.service';
 
-import { MatCardModule, MatButtonModule, MatInputModule, MatProgressBarModule } from '@angular/material';
-import { MasonryModule } from 'angular2-masonry';
+import { MatCardModule, MatButtonModule, MatInputModule, MatProgressBarModule, MatIconModule } from '@angular/material';
+// import { MasonryModule } from 'angular2-masonry';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -38,7 +38,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatInputModule,
     MatButtonModule,
     MatProgressBarModule,
-    MasonryModule,
+    MatIconModule,
+    // MasonryModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes)
   ],

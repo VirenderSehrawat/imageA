@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core'
 
 @Injectable()
-export class ImageService{
+export class ImageService {
     visibleImages = [];
 
-    getImages(){
+    getImages() {
         return this.visibleImages = IMAGES.slice(0);
     }
 
-    getImage(id: number){
-        return IMAGES.slice(0).find(image => image.id == id)
+    getImage(id: number) {
+        return IMAGES.slice(0).find(image => image.id === id)
     }
 }
 
-const IMAGES =[
+const IMAGES = [
     {"id":1, "category": "boats", "caption": "View from the boat", "url":"assets/img/boat_01.jpeg"},
     {"id":2, "category": "boats", "caption": "Sailing the coast", "url":"assets/img/boat_02.jpeg"},
     {"id":3, "category": "boats", "caption": "The water was nice", "url":"assets/img/boat_03.jpeg"},
