@@ -29,11 +29,14 @@ export class ImageListComponent implements OnInit {
       observer.next(new Date().toString() );
     } , 1000);
   });
+  searchTime: number;
 
   handleSuccess(data) {
     this.imagesFound = true;
     this.images = data.hits;
     console.log(data.hits);
+
+    this.searchTime = Math.random();
   }
 
   handleError(error) {

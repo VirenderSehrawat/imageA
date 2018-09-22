@@ -31,8 +31,18 @@
 </div>
 
 <mat-card style="min-height: 200px;" *ngIf="showResults">
+  <mat-card-header>
+    <mat-card-title>
+        <h4 *ngIf="imagesFound">No. of records found .... in  {{searchTime | number:'1.1-3'}} seconds.</h4>
+    </mat-card-title>
+    <mat-card-subtitle>
+        <button class="btn btn-md btn-info" [class.active]="filterBy==='all'" (click)="filterBy='all'">Location Path</button>
+        <button class="btn btn-md btn-info" [class.active]="filterBy==='boats'" (click)="filterBy='boats'">Image</button>
+        <button class="btn btn-md btn-info" [class.active]="filterBy==='camping'" (click)="filterBy='camping'">View Options</button>  
+    </mat-card-subtitle>
+  </mat-card-header>
+  
   <mat-card-content>
-      <h4 *ngIf="imagesFound" mat-subeader>No. of records found .... in .... seconds.</h4>
       <div *ngFor="let image of images" class="image-container">
             <img mat-card-image src="{{image.webformatURL}}"  class="imageFile">
       </div>      
