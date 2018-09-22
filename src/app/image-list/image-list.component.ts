@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ImageServiceAPI } from '../shared/image.service';
 import { Observable } from 'rxjs'
 
+export interface SearchLocation {
+     value: string;
+     viewValue: string;
+}
 @Component({
   selector: 'app-image-list',
   templateUrl: './image-list.component.html',
@@ -13,6 +17,12 @@ export class ImageListComponent implements OnInit {
   searching: boolean = false;
   showResults: boolean = false;
   searchQuery: string;
+
+  searchLocations: SearchLocation[] = [
+    {value: 'Local', viewValue: 'Local Server'},
+    {value: 'cyber', viewValue: 'Cyber Space Server'}
+  ];
+  defaultSearchLocation= 'cyber';
 
   varTime = new Observable(observer => {
     setInterval( () => {
