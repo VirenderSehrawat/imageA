@@ -12,7 +12,7 @@ import { ImageComponent } from './image/image.component';
 import { ImageDetailComponent } from './image/image-detail.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { appRoutes } from '../routes';
-
+import { LoginComponent } from './login.component'
 import { ImageListComponent } from './image-list/image-list.component';
 import { ImageServiceAPI } from './shared/image.service';
 
@@ -28,7 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ImageComponent,
     NavbarComponent,
     ImageDetailComponent,
-    ImageFilterPipe
+    ImageFilterPipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

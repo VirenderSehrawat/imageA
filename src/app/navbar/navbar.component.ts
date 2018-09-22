@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'app-navbar',
@@ -6,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  title = 'Cyberspace images retrieval';
+  title = 'Welcome in SBIRSC Ver 1.0';
+
+  varTime = new Observable(observer => {
+    setInterval( () => {
+      observer.next(new Date().toString() );
+    } , 1000);
+  });
 
   filterBoats(){
     console.log("Boats!")
