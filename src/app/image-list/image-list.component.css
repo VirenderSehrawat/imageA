@@ -27,6 +27,37 @@
   overflow: hidden;
   float: left;
 }
+
+.image-container1{
+  width: 100px;
+  min-height: 100px;
+  max-width: 100px;
+  margin: 8px;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+  float: left;
+}
+.image-container2{
+  width: 200px;
+  min-height: 140px;
+  max-width: 200px;
+  margin: 8px;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+  float: left;
+}
+.image-container3{
+  width: 400px;
+  min-height: 280px;
+  max-width: 400px;
+  margin: 8px;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+  float: left;
+}
 .imageFile{
   width: 100px;
   height: 100px;
@@ -34,6 +65,32 @@
   max-width: 100px;
 }
 
+.imageFile1{
+  width: 100px;
+  height: 70px;
+  min-height: 70px;
+  max-width: 100px;
+}
+
+.imageFile11{
+  width: 100px;
+  height: 70px;
+  min-height: 70px;
+  max-width: 100px;
+}
+
+.imageFile12{
+  width: 200px;
+  height: 140px;
+  min-height: 140px;
+  max-width: 200px;
+}
+.imageFile13{
+  width: 400px;
+  height: 280px;
+  min-height: 280px;
+  max-width: 400px;
+}
 .results{
   padding: 8px;
   margin-bottom: 12px;

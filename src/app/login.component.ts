@@ -11,7 +11,7 @@ export class LoginComponent {
   title = 'login works !!';
   userName: string;
   userPassword: string;
-  
+
   varTime = new Observable(observer => {
     setInterval( () => {
       observer.next(new Date().toString() );

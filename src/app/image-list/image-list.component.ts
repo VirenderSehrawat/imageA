@@ -18,27 +18,51 @@ export class ImageListComponent implements OnInit {
   showResults: boolean = false;
   searchQuery: string;
 
+  viewOptions: any[] = [
+    {id: 1, vwOption: 'Small'},
+    {id: 2, vwOption: 'Medium'},
+    {id: 3, vwOption: 'Large'}
+  ];
+  defaultViewOption: '1';
+
   searchLocations: SearchLocation[] = [
     {value: 'Local', viewValue: 'Local Server'},
     {value: 'cyber', viewValue: 'Cyber Space Server'}
   ];
-  defaultSearchLocation= 'cyber';
+  defaultSearchLocation = 'cyber';
 
   varTime = new Observable(observer => {
     setInterval( () => {
       observer.next(new Date().toString() );
     } , 1000);
   });
+
   searchTime: number;
+  tImagesFound: number;
+  showImagesWithPath: boolean;
+  showImages: boolean;
 
   handleSuccess(data) {
     this.imagesFound = true;
     this.images = data.hits;
     console.log(data.hits);
+    this._imageService.setImages(data.hits);
 
+    this.tImagesFound = this.images.length;
     this.searchTime = Math.random();
+
+    this.showImages = true;
+    this.showImagesWithPath = false;
   }
 
+  onShowWithPath() {
+    this.showImages = false;
+    this.showImagesWithPath = true;
+  }
+  onShowImages() {
+    this.showImages = true;
+    this.showImagesWithPath = false;
+  }
   handleError(error) {
     console.log(error);
   }
@@ -69,6 +93,6 @@ export class ImageListComponent implements OnInit {
       this.searchImages(this.searchQuery);
       }
       */
-    }  
+    }
   }
 }

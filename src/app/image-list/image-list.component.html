@@ -30,22 +30,47 @@
   <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 </div>
 
-<mat-card style="min-height: 200px;" *ngIf="showResults">
+<mat-card style="min-height: 500px;" *ngIf="showResults">
   <mat-card-header>
     <mat-card-title>
-        <h4 *ngIf="imagesFound">No. of records found .... in  {{searchTime | number:'1.1-3'}} seconds.</h4>
+        <h4 *ngIf="imagesFound">No. of records found {{tImagesFound}} in  {{searchTime | number:'1.1-3'}} seconds.</h4>
     </mat-card-title>
     <mat-card-subtitle>
-        <button class="btn btn-md btn-info" [class.active]="filterBy==='all'" (click)="filterBy='all'">Location Path</button>
-        <button class="btn btn-md btn-info" [class.active]="filterBy==='boats'" (click)="filterBy='boats'">Image</button>
-        <button class="btn btn-md btn-info" [class.active]="filterBy==='camping'" (click)="filterBy='camping'">View Options</button>  
+      <div>
+        <button class="btn btn-md btn-info" (click)="onShowWithPath()">Display with Location Path</button>
+        <button class="btn btn-md btn-info" (click)="onShowImages()">Display Image</button>
+        <!-- <button class="btn btn-md btn-info" (click)="filterBy='camping'">View Options</button>  -->
+        <mat-select placeholder="View Options" [(value)]="defaultViewOption" style="width:150px;">
+            <mat-option *ngFor="let vw of viewOptions" [value]="vw.id">
+              {{vw.vwOption}}
+            </mat-option>
+          </mat-select>
+          {{defaultViewOption}}
+      </div>
     </mat-card-subtitle>
   </mat-card-header>
   
   <mat-card-content>
-      <div *ngFor="let image of images" class="image-container">
-            <img mat-card-image src="{{image.webformatURL}}"  class="imageFile">
+    <div *ngIf="showImages">
+      <div *ngFor="let image of images" class="image-container{{defaultViewOption}}" >
+          <!--  <a href="{{image.webformatURL}}" target="_blank" [routerLink] ="['/image', image.id]"> -->
+          <a [routerLink] ="['/image', image.id]">
+            <img mat-card-image src="{{image.webformatURL}}"  class="imageFile1{{defaultViewOption}}">
+          </a>
       </div>      
+    </div>
+    <div *ngIf="showImagesWithPath" style="margin-top:20px;">
+      <div *ngFor="let image of images" class="row" style="margin-top:10px;">
+      <div style="float:left;" >
+        <a href="{{image.webformatURL}}" target="_blank">
+        <img src="{{image.previewURL}}" class="imageFile1" >
+      </a>
+      </div>
+      <div>
+        <a href="{{image.webformatURL}}" target="_blank">{{image.webformatURL}}</a>        
+      </div>
+      </div>
+    </div>
   </mat-card-content>
   
   <!--
