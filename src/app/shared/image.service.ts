@@ -31,6 +31,6 @@ export class ImageServiceAPI {
 
     // console.log(this.images.find(img => img.id === id));
     // return this.images.filter(element => element.id === id );
-    return this.images[0];
+    return this.images[id];
   }
 }

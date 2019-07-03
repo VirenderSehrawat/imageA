@@ -16,7 +16,13 @@ import { LoginComponent } from './login.component'
 import { ImageListComponent } from './image-list/image-list.component';
 import { ImageServiceAPI } from './shared/image.service';
 
-import { MatSelectModule, MatCardModule, MatButtonModule, MatInputModule, MatProgressBarModule, MatIconModule } from '@angular/material';
+import { MatSelectModule,
+  MatCardModule,
+  MatButtonModule,
+  MatInputModule,
+  MatProgressBarModule,
+  MatIconModule,
+  MatDialogModule } from '@angular/material';
 // import { MasonryModule } from 'angular2-masonry';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -41,6 +47,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatProgressBarModule,
     MatIconModule,
     MatSelectModule,
+    MatDialogModule,
     // MasonryModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes)

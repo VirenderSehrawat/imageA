@@ -52,9 +52,9 @@
   
   <mat-card-content>
     <div *ngIf="showImages">
-      <div *ngFor="let image of images" class="image-container{{defaultViewOption}}" >
+      <div *ngFor="let image of images; let i = index" class="image-container{{defaultViewOption}}" >
           <!--  <a href="{{image.webformatURL}}" target="_blank" [routerLink] ="['/image', image.id]"> -->
-          <a [routerLink] ="['/image', image.id]">
+          <a [routerLink] ="['/image', i]">
             <img mat-card-image src="{{image.webformatURL}}"  class="imageFile1{{defaultViewOption}}">
           </a>
       </div>      
