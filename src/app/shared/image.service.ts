@@ -8,7 +8,7 @@ export class ImageServiceAPI {
   private query: string;
   private API_KEY: string = environment.PIXABAY_API_KEY;
   private API_URL: string = environment.PIXABAY_API_URL;
-  private URL: string = this.API_URL + this.API_KEY + '&q=';
+  private URL: string = this.API_URL + this.API_KEY + '&image_type=photo&min_width=400&q=';
   private perPage: string = '&per_page=9';
   private images: any[];
 
